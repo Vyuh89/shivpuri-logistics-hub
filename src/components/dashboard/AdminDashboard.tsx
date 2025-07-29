@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+>>>>>>> 75529dec7fbf8347443e26709cf1ef5ff379bc41
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -14,6 +17,7 @@ import {
   Clock,
   Fuel,
   BarChart3,
+<<<<<<< HEAD
   PieChart,
   Sun,
   Moon
@@ -26,6 +30,12 @@ export const AdminDashboard = () => {
     setDarkMode(!darkMode);
   };
 
+=======
+  PieChart
+} from "lucide-react";
+
+export const AdminDashboard = () => {
+>>>>>>> 75529dec7fbf8347443e26709cf1ef5ff379bc41
   const stats = [
     {
       title: "Total Revenue",
@@ -137,6 +147,7 @@ export const AdminDashboard = () => {
     }
   };
 
+<<<<<<< HEAD
   // Dynamic classes based on dark mode
   const bgClass = darkMode ? "bg-gray-900" : "bg-background";
   const textClass = darkMode ? "text-gray-100" : "text-foreground";
@@ -166,6 +177,15 @@ export const AdminDashboard = () => {
             <Moon className="h-5 w-5 text-gray-700" />
           )}
         </Button>
+=======
+  return (
+    <div className="p-6 space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold text-foreground">Admin Dashboard</h1>
+        <p className="text-muted-foreground">
+          Complete overview of your transport business operations
+        </p>
+>>>>>>> 75529dec7fbf8347443e26709cf1ef5ff379bc41
       </div>
 
       {/* Stats Grid */}
@@ -173,6 +193,7 @@ export const AdminDashboard = () => {
         {stats.map((stat) => {
           const Icon = stat.icon;
           return (
+<<<<<<< HEAD
             <Card key={stat.title} className={`shadow-card ${cardClass} ${borderClass}`}>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
@@ -181,11 +202,25 @@ export const AdminDashboard = () => {
                       {stat.title}
                     </p>
                     <p className={`text-2xl font-bold ${textClass}`}>
+=======
+            <Card key={stat.title} className="shadow-card">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-medium text-muted-foreground">
+                      {stat.title}
+                    </p>
+                    <p className="text-2xl font-bold text-foreground">
+>>>>>>> 75529dec7fbf8347443e26709cf1ef5ff379bc41
                       {stat.value}
                     </p>
                     <p className={`text-sm flex items-center mt-1 ${
                       stat.trend === 'up' ? 'text-success' : 
+<<<<<<< HEAD
                       stat.trend === 'down' ? 'text-destructive' : mutedTextClass
+=======
+                      stat.trend === 'down' ? 'text-destructive' : 'text-muted-foreground'
+>>>>>>> 75529dec7fbf8347443e26709cf1ef5ff379bc41
                     }`}>
                       {stat.trend === 'up' && <TrendingUp className="h-3 w-3 mr-1" />}
                       {stat.trend === 'down' && <TrendingDown className="h-3 w-3 mr-1" />}
@@ -204,6 +239,7 @@ export const AdminDashboard = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Recent Loads */}
+<<<<<<< HEAD
         <Card className={`lg:col-span-2 shadow-card ${cardClass} ${borderClass}`}>
           <CardHeader>
             <CardTitle className={`flex items-center ${textClass}`}>
@@ -211,12 +247,22 @@ export const AdminDashboard = () => {
               Recent Loads
             </CardTitle>
             <CardDescription className={mutedTextClass}>
+=======
+        <Card className="lg:col-span-2 shadow-card">
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <Package className="h-5 w-5 mr-2" />
+              Recent Loads
+            </CardTitle>
+            <CardDescription>
+>>>>>>> 75529dec7fbf8347443e26709cf1ef5ff379bc41
               Latest load assignments and their current status
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               {recentLoads.map((load) => (
+<<<<<<< HEAD
                 <div key={load.id} className={`flex items-center justify-between p-4 border rounded-lg ${borderClass}`}>
                   <div className="flex-1">
                     <div className="flex items-center space-x-2 mb-1">
@@ -227,11 +273,27 @@ export const AdminDashboard = () => {
                       {load.vendor} • {load.route}
                     </p>
                     <p className={`text-sm ${mutedTextClass}`}>
+=======
+                <div key={load.id} className="flex items-center justify-between p-4 border border-border rounded-lg">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-2 mb-1">
+                      <span className="font-semibold">{load.id}</span>
+                      {getStatusBadge(load.status)}
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-1">
+                      {load.vendor} • {load.route}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+>>>>>>> 75529dec7fbf8347443e26709cf1ef5ff379bc41
                       {load.truck} • {load.driver}
                     </p>
                   </div>
                   <div className="text-right">
+<<<<<<< HEAD
                     <p className={`font-semibold ${darkMode ? 'text-primary-300' : 'text-primary'}`}>{load.amount}</p>
+=======
+                    <p className="font-semibold text-primary">{load.amount}</p>
+>>>>>>> 75529dec7fbf8347443e26709cf1ef5ff379bc41
                   </div>
                 </div>
               ))}
@@ -243,6 +305,7 @@ export const AdminDashboard = () => {
         </Card>
 
         {/* Alerts & Notifications */}
+<<<<<<< HEAD
         <Card className={`shadow-card ${cardClass} ${borderClass}`}>
           <CardHeader>
             <CardTitle className={`flex items-center ${textClass}`}>
@@ -250,17 +313,34 @@ export const AdminDashboard = () => {
               Alerts & Notifications
             </CardTitle>
             <CardDescription className={mutedTextClass}>
+=======
+        <Card className="shadow-card">
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <AlertTriangle className="h-5 w-5 mr-2" />
+              Alerts & Notifications
+            </CardTitle>
+            <CardDescription>
+>>>>>>> 75529dec7fbf8347443e26709cf1ef5ff379bc41
               Important updates requiring attention
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               {alerts.map((alert, index) => (
+<<<<<<< HEAD
                 <div key={index} className={`flex items-start space-x-3 p-3 border rounded-lg ${borderClass}`}>
                   {getAlertIcon(alert.type)}
                   <div className="flex-1">
                     <p className={`text-sm ${textClass}`}>{alert.message}</p>
                     <p className={`text-xs ${mutedTextClass} mt-1`}>{alert.time}</p>
+=======
+                <div key={index} className="flex items-start space-x-3 p-3 border border-border rounded-lg">
+                  {getAlertIcon(alert.type)}
+                  <div className="flex-1">
+                    <p className="text-sm">{alert.message}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{alert.time}</p>
+>>>>>>> 75529dec7fbf8347443e26709cf1ef5ff379bc41
                   </div>
                 </div>
               ))}
@@ -273,10 +353,17 @@ export const AdminDashboard = () => {
       </div>
 
       {/* Quick Actions */}
+<<<<<<< HEAD
       <Card className={`shadow-card ${cardClass} ${borderClass}`}>
         <CardHeader>
           <CardTitle className={textClass}>Quick Actions</CardTitle>
           <CardDescription className={mutedTextClass}>
+=======
+      <Card className="shadow-card">
+        <CardHeader>
+          <CardTitle>Quick Actions</CardTitle>
+          <CardDescription>
+>>>>>>> 75529dec7fbf8347443e26709cf1ef5ff379bc41
             Frequently used administrative functions
           </CardDescription>
         </CardHeader>
